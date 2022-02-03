@@ -16,7 +16,13 @@ public class HelloController {
     // Create a handler that handles requests of form /hello?name=LaunchCode
     @RequestMapping(method = {RequestMethod.GET, RequestMethod.POST})
     public String helloWithQueryParam(@RequestParam String name, @RequestParam String lang) {
-        return createMessage(name, lang);
+        return "<html>" +
+                "<body>" +
+                "<h1 style='text-align: center'>" +
+                createMessage(name, lang) +
+                "</h1>" +
+                "</body>" +
+                "</html>";
     }
 
     // Create a handler that handles requests of form /hello/LaunchCode
